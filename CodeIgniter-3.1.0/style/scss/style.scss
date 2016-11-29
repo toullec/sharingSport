@@ -1,0 +1,105 @@
+$color-base: #fff;
+$color-text: #222;
+$color-accent: #8aa4bb;
+
+*, *:before, *:after { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; }
+body {
+  background-color: $color-accent;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/14104/stardust.png);
+  background-blend-mode: hard-light;
+  font-size: 10pt;
+  color: $color-text;
+  line-height: normal;
+}
+a, a:hover { color: $color-accent; font-weight: 600; text-decoration: none; }
+// NAVIGATION
+#navigation {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50px;
+  background: #fff;
+  box-shadow: 0 -5px 5px 5px rgba(#000,0.3);
+  // LOGO
+  .logo {
+    float: left;
+    height: 50px;
+    padding: 0 15px;
+    font-size: 25pt;
+    color: $color-accent;
+    font-weight: 900;
+    line-height: 50px;
+    text-transform: uppercase;
+  }
+  // LINKS
+  .links { float: right; margin-right: 10px;
+    li { float: left; margin: 10px 0 10px 5px;
+      a {
+        position: relative;
+        height: 30px;
+        padding: 0 10px;
+        border-radius: 2px;
+        display: block;
+        transition: all 150ms ease;
+        color: $color-accent;
+        line-height: 30px;
+        white-space: nowrap;
+        &:hover,
+        &.active {
+          background: $color-accent;
+          color: $color-base;
+        }
+        &.active { background: shade($color-accent,15%); }
+        &[class*="trigger-"] { padding-right: 40px; }
+        i {
+          position: absolute;
+          top: 0; right: 0; bottom: 0;
+          width: 30px; height: 30px;
+          line-height: 30px;
+          text-align: center;
+          &:after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; bottom: 0;
+            height: 50%;
+            margin: auto;
+            border-left: 1px solid rgba(#000,0.15);
+          }
+        }
+      }
+      // DROPDOWN
+      &.dropdown { position: relative;
+        // DROP
+        .drop {
+          position: absolute;
+          top: 0; right: 0;
+          border-radius: 2px;
+          background: $color-base;
+          display: none;
+          overflow: hidden;
+          box-shadow: 0 0 5px rgba(#000,0.3);
+          transform: translateY(35px);
+          li { float: none; margin: 0;
+            a { border-radius: 0; }
+          }
+          // SUB DROP
+          .drop-sub {
+            border-top: 1px solid rgba(#000,0.15);
+            background: shade($color-accent,15%);
+            display: none;
+            li { width: 100%; display: table;
+              a {
+                height: 25px;
+                font-size: 8pt;
+                color: $color-base;
+                line-height: 25px;
+              }
+              &:first-child a { margin-top: 5px; }
+              &:last-child a { margin-bottom: 5px; }
+            }
+          }
+        }
+      }
+    }
+  }
+}

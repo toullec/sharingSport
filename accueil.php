@@ -2,5 +2,5 @@
 
 echo 'Bonjour';
 
-SALUT 
+TEST E
 ?>

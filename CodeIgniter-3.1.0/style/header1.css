@@ -1,0 +1,17 @@
+
+ol,ul,li,header,nav
+{
+  margin:0;
+  padding:0;
+  border:0;
+  font-size:100%;
+  font:inherit;
+  vertical-align:baseline
+}
+header,nav{
+  display:block
+}
+
+ol,ul{
+  list-style:none
+}

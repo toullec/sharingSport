@@ -3,6 +3,7 @@
 	<name>sharingSport</name>
 	<comment></comment>
 	<projects>
+		<project>sharingsportglobal</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
