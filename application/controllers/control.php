@@ -5,6 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class control extends CI_Controller {
 
+	//test mise à jour sur la branche test 2911
 	public function index(){
 		
 			if(isset($_GET['action']) && ($_GET['action'])=='accueilDec'){
